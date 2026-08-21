@@ -1,6 +1,7 @@
 import express from "express";
 import { success } from "zod";
 import authRoutes from "./modules/auth/auth.routes.js";
+import movieRoutes from "./modules/movies/movie.routes.js";
 
 const app = express();
 
@@ -13,6 +14,7 @@ app.get("/health", (req, res) => {
   });
 });
 
-app.use("/auth", authRoutes);
+app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/movies", movieRoutes);
 
 export default app;

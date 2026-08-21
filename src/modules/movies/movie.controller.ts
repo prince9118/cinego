@@ -9,6 +9,7 @@ import {
   updateMovie
 } from "./movie.service.js";
 import { create } from "node:domain";
+import { success } from "zod";
 
 export async function createMovieController(req: Request, res: Response) {
   const result = createMovieSchema.safeParse(req.body);
@@ -66,6 +67,43 @@ export async function getMovieByIdController(req: Request, res: Response) {
       success: true,
       data: movie
     });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error"
+    });
+  }
+}
+
+export async function updateMovieController(req: Request, res: Response) {
+  const result = updateMovieSchema.safeParse(req.body);
+  if (!result.success) {
+    return res.status(400).json({
+      success: false,
+      message: "Validation failes",
+      errors: result.error.flatten()
+    });
+  }
+  try {
+    const movie = await updateMovie(req.params.id as string, result.data);
+    return res.status(200).json({
+      success: true,
+      data: movie
+    });
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json({
+      success: false,
+      message: "Internal Server Error"
+    });
+  }
+}
+
+export async function deleteMovieController(req: Request, res: Response) {
+  try {
+    await deleteMovie(req.params.id as string);
+    return res.status(204).send();
   } catch (error) {
     console.log(error);
     return res.status(500).json({
