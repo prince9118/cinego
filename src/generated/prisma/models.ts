@@ -9,4 +9,11 @@
  * 🟢 You can import this file directly.
  */
 export type * from './models/User.js'
+export type * from './models/City.js'
+export type * from './models/Theatre.js'
+export type * from './models/Screen.js'
+export type * from './models/Seat.js'
+export type * from './models/Movie.js'
+export type * from './models/Show.js'
+export type * from './models/ShowSeat.js'
 export type * from './commonInputTypes.js'

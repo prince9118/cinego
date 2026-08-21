@@ -15,3 +15,21 @@ export const UserRole = {
 } as const
 
 export type UserRole = (typeof UserRole)[keyof typeof UserRole]
+
+
+export const SeatType = {
+  REGULAR: 'REGULAR',
+  PREMIUM: 'PREMIUM',
+  RECLINER: 'RECLINER'
+} as const
+
+export type SeatType = (typeof SeatType)[keyof typeof SeatType]
+
+
+export const ShowSeatStatus = {
+  AVAILABLE: 'AVAILABLE',
+  LOCKED: 'LOCKED',
+  BOOKED: 'BOOKED'
+} as const
+
+export type ShowSeatStatus = (typeof ShowSeatStatus)[keyof typeof ShowSeatStatus]

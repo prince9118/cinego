@@ -46,3 +46,38 @@ export { Prisma }
  * 
  */
 export type User = Prisma.UserModel
+/**
+ * Model City
+ * 
+ */
+export type City = Prisma.CityModel
+/**
+ * Model Theatre
+ * 
+ */
+export type Theatre = Prisma.TheatreModel
+/**
+ * Model Screen
+ * 
+ */
+export type Screen = Prisma.ScreenModel
+/**
+ * Model Seat
+ * 
+ */
+export type Seat = Prisma.SeatModel
+/**
+ * Model Movie
+ * 
+ */
+export type Movie = Prisma.MovieModel
+/**
+ * Model Show
+ * 
+ */
+export type Show = Prisma.ShowModel
+/**
+ * Model ShowSeat
+ * 
+ */
+export type ShowSeat = Prisma.ShowSeatModel

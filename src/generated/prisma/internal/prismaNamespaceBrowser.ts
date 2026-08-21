@@ -51,7 +51,14 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  User: 'User'
+  User: 'User',
+  City: 'City',
+  Theatre: 'Theatre',
+  Screen: 'Screen',
+  Seat: 'Seat',
+  Movie: 'Movie',
+  Show: 'Show',
+  ShowSeat: 'ShowSeat'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -83,6 +90,93 @@ export const UserScalarFieldEnum = {
 export type UserScalarFieldEnum = (typeof UserScalarFieldEnum)[keyof typeof UserScalarFieldEnum]
 
 
+export const CityScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  state: 'state',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type CityScalarFieldEnum = (typeof CityScalarFieldEnum)[keyof typeof CityScalarFieldEnum]
+
+
+export const TheatreScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  address: 'address',
+  cityId: 'cityId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type TheatreScalarFieldEnum = (typeof TheatreScalarFieldEnum)[keyof typeof TheatreScalarFieldEnum]
+
+
+export const ScreenScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  theatreId: 'theatreId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ScreenScalarFieldEnum = (typeof ScreenScalarFieldEnum)[keyof typeof ScreenScalarFieldEnum]
+
+
+export const SeatScalarFieldEnum = {
+  id: 'id',
+  row: 'row',
+  number: 'number',
+  type: 'type',
+  screenId: 'screenId',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type SeatScalarFieldEnum = (typeof SeatScalarFieldEnum)[keyof typeof SeatScalarFieldEnum]
+
+
+export const MovieScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  description: 'description',
+  duration: 'duration',
+  language: 'language',
+  genre: 'genre',
+  releaseDate: 'releaseDate',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type MovieScalarFieldEnum = (typeof MovieScalarFieldEnum)[keyof typeof MovieScalarFieldEnum]
+
+
+export const ShowScalarFieldEnum = {
+  id: 'id',
+  movieId: 'movieId',
+  screenId: 'screenId',
+  startTime: 'startTime',
+  endTime: 'endTime',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ShowScalarFieldEnum = (typeof ShowScalarFieldEnum)[keyof typeof ShowScalarFieldEnum]
+
+
+export const ShowSeatScalarFieldEnum = {
+  id: 'id',
+  showId: 'showId',
+  seatId: 'seatId',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ShowSeatScalarFieldEnum = (typeof ShowSeatScalarFieldEnum)[keyof typeof ShowSeatScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -97,4 +191,12 @@ export const QueryMode = {
 } as const
 
 export type QueryMode = (typeof QueryMode)[keyof typeof QueryMode]
+
+
+export const NullsOrder = {
+  first: 'first',
+  last: 'last'
+} as const
+
+export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
 
