@@ -1,5 +1,6 @@
 import express from "express";
 import { success } from "zod";
+import authRoutes from "./modules/auth/auth.routes.js";
 
 const app = express();
 
@@ -11,5 +12,7 @@ app.get("/health", (req, res) => {
     message: "Api Health checked"
   });
 });
+
+app.use("/auth", authRoutes);
 
 export default app;
