@@ -12,6 +12,7 @@ app.get("/health", (req, res) => {
     success: true,
     message: "Api Health checked"
   });
+  
 });
 
 app.use("/api/v1/auth", authRoutes);
