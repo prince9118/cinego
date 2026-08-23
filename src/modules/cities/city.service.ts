@@ -26,7 +26,7 @@ export async function getCityById(cityId: string) {
   });
 }
 
-export async function updatCity(cityId: string, input: UpdateCityInput) {
+export async function updateCity(cityId: string, input: UpdateCityInput) {
   return prisma.city.update({
     where: {
       id: cityId
