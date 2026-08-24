@@ -2,6 +2,7 @@ import express from "express";
 import { success } from "zod";
 import authRoutes from "./modules/auth/auth.routes.js";
 import movieRoutes from "./modules/movies/movie.routes.js";
+import cityRoutes from "./modules/cities/city.routes.js";
 
 const app = express();
 
@@ -12,10 +13,11 @@ app.get("/health", (req, res) => {
     success: true,
     message: "Api Health checked"
   });
-  
 });
 
 app.use("/api/v1/auth", authRoutes);
 app.use("/api/v1/movies", movieRoutes);
+
+app.use("/api/v1/cities", cityRoutes);
 
 export default app;
