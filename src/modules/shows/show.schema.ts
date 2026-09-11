@@ -10,12 +10,4 @@ export const createShowSchema = z.object({
   endTime: z.coerce.date()
 });
 
-export const updateShowSchema = z.object({
-  startTime: z.coerce.date().optional(),
-
-  endTime: z.coerce.date().optional()
-});
-
-export type CreateShowInput = z.infer<typeof createShowSchema>;
-
-export type UpdateShowInput = z.infer<typeof updateShowSchema>;
+e
