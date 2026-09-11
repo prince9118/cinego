@@ -100,15 +100,15 @@ export async function updateMovieController(req: Request, res: Response) {
   }
 }
 
-export async function deleteMovieController(req: Request, res: Response) {
-  try {
-    await deleteMovie(req.params.id as string);
-    return res.status(204).send();
-  } catch (error) {
-    console.log(error);
-    return res.status(500).json({
-      success: false,
-      message: "Internal Server Error"
-    });
-  }
-}
+// export async function deleteMovieController(req: Request, res: Response) {
+//   try {
+//     await deleteMovie(req.params.id as string);
+//     return res.status(204).send();
+//   } catch (error) {
+//     console.log(error);
+//     return res.status(500).json({
+//       success: false,
+//       message: "Internal Server Error"
+//     });
+//   }
+// }
