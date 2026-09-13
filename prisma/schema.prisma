@@ -105,37 +105,37 @@ model Movie {
   @@index([title])
 }
 
-model Show {
-  id       String @id @default(uuid())
-  movieId  String
-  movie    Movie  @relation(fields: [movieId], references: [id])
-  screenId String
-  screen   Screen @relation(fields: [screenId], references: [id])
+// model Show {
+//   id       String @id @default(uuid())
+//   movieId  String
+//   movie    Movie  @relation(fields: [movieId], references: [id])
+//   screenId String
+//   screen   Screen @relation(fields: [screenId], references: [id])
 
-  startTime DateTime
-  endTime   DateTime
-  showSeats ShowSeat[]
+//   startTime DateTime
+//   endTime   DateTime
+//   showSeats ShowSeat[]
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
 
-  @@index([movieId])
-  @@index([screenId])
-  @@index([startTime])
-}
+//   @@index([movieId])
+//   @@index([screenId])
+//   @@index([startTime])
+// }
 
-model ShowSeat {
-  id String @id @default(uuid())
+// model ShowSeat {
+//   id String @id @default(uuid())
 
-  showId String
-  show   Show           @relation(fields: [showId], references: [id])
-  seatId String
-  seat   Seat           @relation(fields: [seatId], references: [id])
-  status ShowSeatStatus @default(AVAILABLE)
+//   showId String
+//   show   Show           @relation(fields: [showId], references: [id])
+//   seatId String
+//   seat   Seat           @relation(fields: [seatId], references: [id])
+//   status ShowSeatStatus @default(AVAILABLE)
 
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+//   createdAt DateTime @default(now())
+//   updatedAt DateTime @updatedAt
 
-  @@unique([showId, seatId])
-  @@index([showId])
-}
+//   @@unique([showId, seatId])
+//   @@index([showId])
+// }
