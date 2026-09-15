@@ -71,34 +71,4 @@ export async function loginController(req: Request, res: Response) {
   }
 }
 
-export async function meController(req: AuthenticatedRequest, res: Response) {
-  if (!req.user) {
-    return res.status(401).json({
-      success: true,
-      message: "Authentication required"
-    });
-  }
-  const user = await prisma.user.findUnique({
-    where: {
-      id: req.user.userId
-    },
-    select: {
-      id: true,
-      name: true,
-      email: true,
-      role: true,
-      createdAt: true,
-      updatedAt: true
-    }
-  });
-  if (!user) {
-    return res.status(404).json({
-      success: false,
-      message: "User not found"
-    });
-  }
-  return res.status(200).json({
-    success: true,
-    data: user
-  });
-}
+
